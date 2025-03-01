@@ -29,22 +29,9 @@
 		1AFB6A552D6FB5AE0080BAA0 /* coffee_shopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = coffee_shopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		1AFB6A6F2D70F5860080BAA0 /* Exceptions for "coffee_shop" folder in "coffee_shop" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"coffee-shop-Info.plist",
-			);
-			target = 1AFB6A3A2D6FB5A90080BAA0 /* coffee_shop */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		1AFB6A3D2D6FB5A90080BAA0 /* coffee_shop */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				1AFB6A6F2D70F5860080BAA0 /* Exceptions for "coffee_shop" folder in "coffee_shop" target */,
-			);
 			path = coffee_shop;
 			sourceTree = "<group>";
 		};
