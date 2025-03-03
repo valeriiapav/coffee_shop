@@ -1,0 +1,14 @@
+[
+    {
+        "type": [
+            "matcha",
+            "milk_coffee"
+        ],
+        "name": "Matcha latte",
+        "asset": "matcha_latte",
+        "description": "Includes lactose-free milk",
+        "price": 3.5,
+        "addition": "dish contains allergen",
+        "rating": 4.9
+    }
+]
