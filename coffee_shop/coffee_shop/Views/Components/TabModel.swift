@@ -29,4 +29,8 @@ enum TabModel: Int, CaseIterable {
     var selectedAsset: String {
         self.idleAsset + "_selected"
     }
+    
+    var darkModeAsset: String {
+        self.idleAsset + "_dark"
+    }
 }

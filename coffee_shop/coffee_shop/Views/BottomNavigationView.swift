@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct BottomNavigationView: View {
+    @Environment(\.colorScheme) var colorScheme
     @Binding var selectedTab: Int
     
     var body: some View {
@@ -40,14 +41,22 @@ struct BottomNavigationView: View {
     }
     
     func customTabItem(model: TabModel, isActive: Bool) -> some View {
-        return VStack {
-            Image(isActive ? model.selectedAsset : model.idleAsset)
+        return ZStack {
             
-            if isActive {
-                Image("selection")
+            //a trick to increase touchable area for tab icon
+            Rectangle()
+                .frame(height: 50)
+                .foregroundStyle(.blue.opacity(0.00001))
+            
+            VStack {
+                Image(isActive ? model.selectedAsset : colorScheme == .dark ? model.darkModeAsset : model.idleAsset)
+                
+                if isActive {
+                    Image("selection")
+                }
             }
+            .frame(maxWidth: .infinity)
         }
-        .frame(maxWidth: .infinity)
     }
 }
 
