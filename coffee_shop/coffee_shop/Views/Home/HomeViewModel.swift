@@ -7,7 +7,6 @@
 
 import Foundation
 
-@MainActor
 final class HomeViewModel: ObservableObject {
     let coffeeDrinks: [CoffeeDrink]
     

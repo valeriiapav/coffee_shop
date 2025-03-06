@@ -12,4 +12,18 @@ enum CoffeeType: String, CaseIterable, Codable {
     case plainCoffee = "plain_coffee"
     case matcha
     case special
+    
+    var stringRepresentation: String {
+        switch self {
+            
+        case .milkCoffee:
+            "Milk Coffee"
+        case .plainCoffee:
+            "Dark Coffee"
+        case .matcha:
+            "Matcha"
+        case .special:
+            "Special"
+        }
+    }
 }

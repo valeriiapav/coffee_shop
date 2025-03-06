@@ -7,7 +7,6 @@
 
 import Foundation
 
-@MainActor
 final class DrinksDataManager: ObservableObject {
     static let shared = DrinksDataManager()
     
@@ -20,12 +19,12 @@ final class DrinksDataManager: ObservableObject {
     }
     
     private func loadDrinksFromFile() {
-        if let url = Bundle.main.url(forResource: "cities", withExtension: "json") {
+        if let url = Bundle.main.url(forResource: filename, withExtension: "json") {
             do {
                 let data = try Data(contentsOf: url)
                 drinks = try JSONDecoder().decode([CoffeeDrink].self, from: data)
             } catch {
-                print("Error: Could not find cities.json in bundle")
+                print("Error: Could not find \(filename).json in bundle")
             }
         }
     }

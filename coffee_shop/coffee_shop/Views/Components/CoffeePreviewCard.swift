@@ -15,7 +15,7 @@ struct CoffeePreviewCard: View {
                 .foregroundStyle(.white)
             
             VStack {
-                Image(.americano)
+                Image(coffee.asset)
                     .resizable()
                     .scaledToFit()
                     .clipShape(RoundedRectangle(cornerRadius: 16))
@@ -27,7 +27,7 @@ struct CoffeePreviewCard: View {
                         .fontWeight(.semibold)
                         .foregroundStyle(.csBlack)
                     
-                    Text(coffee.type.first?.rawValue.capitalized ?? "")
+                    Text(coffee.type.first?.stringRepresentation ?? "")
                         .font(Constants.fontSora(12))
                         .foregroundStyle(.csGray)
                         .padding(.top, 5)

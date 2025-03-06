@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct CoffeeDrink: Codable {
+struct CoffeeDrink: Codable, Hashable {
     let type: [CoffeeType]
     let name: String
     let asset: String

@@ -6,7 +6,62 @@
         ],
         "name": "Matcha latte",
         "asset": "matcha_latte",
-        "description": "Includes lactose-free milk",
+        "description": "Includes lactose-free or plant-based milk option",
+        "price": 3.5,
+        "addition": "dish contains allergen",
+        "rating": 4.9
+    },
+    {
+        "type": [
+            "plain_coffee"
+        ],
+        "name": "Americano",
+        "asset": "americano",
+        "description": "Americano",
+        "price": 2.5,
+        "addition": "plain coffee",
+        "rating": 4.9
+    },
+    {
+        "type": [
+            "milk_coffee"
+        ],
+        "name": "Cappucino",
+        "asset": "cappucino",
+        "description": "Includes lactose-free or plant-based milk option",
+        "price": 3.5,
+        "addition": "dish contains allergen",
+        "rating": 4.9
+    },
+    {
+        "type": [
+            "plain_coffee"
+        ],
+        "name": "Dopio",
+        "asset": "dopio",
+        "description": "Dopio",
+        "price": 2.5,
+        "addition": "plain coffee",
+        "rating": 4.9
+    },
+    {
+        "type": [
+            "milk_coffee"
+        ],
+        "name": "Frappe",
+        "asset": "frappe",
+        "description": "Includes lactose-free or plant-based milk option",
+        "price": 3.5,
+        "addition": "dish contains allergen",
+        "rating": 4.9
+    },
+    {
+        "type": [
+            "milk_coffee"
+        ],
+        "name": "Latte",
+        "asset": "latte",
+        "description": "Includes lactose-free or plant-based milk option",
         "price": 3.5,
         "addition": "dish contains allergen",
         "rating": 4.9

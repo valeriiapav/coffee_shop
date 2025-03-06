@@ -11,7 +11,17 @@ struct HomeView: View {
     @StateObject var viewModel: HomeViewModel = .init()
     
     var body: some View {
-        Text("This is home")
+        ScrollView {
+            coffeeTable
+        }
+    }
+    
+    var coffeeTable: some View {
+        LazyVGrid(columns: [ GridItem(.adaptive(minimum: Constants.screenWidth / 2.2)) ], spacing: 15) {
+            ForEach(viewModel.coffeeDrinks, id: \.self) { item in
+                CoffeePreviewCard(coffee: item)
+            }
+        }
     }
 }
 
