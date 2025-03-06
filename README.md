@@ -4,4 +4,5 @@ Coffee drinks images are taken from real coffee shop: https://kopalnia.choiceqr.
 
 As of 01.03.2025 the app looks like this: 
 
-<img width="321" alt="image" src="https://github.com/user-attachments/assets/fd0bfe55-51e4-45c3-be5e-2e545cddb8a8" />
+<img width="310" alt="image" src="https://github.com/user-attachments/assets/ed0e17bf-a3a1-4159-a90d-7f9e9d987b59" />
+
