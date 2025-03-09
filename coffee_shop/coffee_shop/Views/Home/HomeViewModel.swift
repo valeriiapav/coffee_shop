@@ -9,6 +9,7 @@ import Foundation
 
 final class HomeViewModel: ObservableObject {
     let coffeeDrinks: [CoffeeDrink]
+    @Published var selectedCoffeeType: CoffeeType = .all
     
     init() {
         coffeeDrinks = DrinksDataManager.shared.drinks

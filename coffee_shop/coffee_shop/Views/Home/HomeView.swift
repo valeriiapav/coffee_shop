@@ -12,16 +12,43 @@ struct HomeView: View {
     
     var body: some View {
         ScrollView {
+            coffeeTypeSelector
             coffeeTable
         }
     }
     
+    var coffeeTypeSelector: some View {
+        ScrollView(.horizontal) {
+            LazyHStack {
+                ForEach(CoffeeType.allCases, id: \.self) { type in
+                    coffeeTypeTab(type: type)
+                }
+                
+            }
+        }
+        .scrollIndicators(.hidden)
+        .padding()
+    }
+    
     var coffeeTable: some View {
         LazyVGrid(columns: [ GridItem(.adaptive(minimum: Constants.screenWidth / 2.2)) ], spacing: 15) {
-            ForEach(viewModel.coffeeDrinks, id: \.self) { item in
+            ForEach(viewModel.coffeeDrinks.filter {$0.type.contains(viewModel.selectedCoffeeType)}, id: \.self) { item in
                 CoffeePreviewCard(coffee: item)
             }
         }
+    }
+    
+    func coffeeTypeTab(type: CoffeeType) -> some View {
+        Text(type.stringRepresentation)
+            .foregroundStyle(.csChocolate)
+            .padding()
+            .background(
+                RoundedRectangle(cornerRadius: 16)
+                    .foregroundStyle(.csBeige)
+            )
+            .onTapGesture {
+                viewModel.selectedCoffeeType = type
+            }
     }
 }
 

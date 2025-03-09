@@ -8,6 +8,7 @@
 import Foundation
 
 enum CoffeeType: String, CaseIterable, Codable {
+    case all
     case milkCoffee = "milk_coffee"
     case plainCoffee = "plain_coffee"
     case matcha
@@ -24,6 +25,8 @@ enum CoffeeType: String, CaseIterable, Codable {
             "Matcha"
         case .special:
             "Special"
+        case .all:
+            "All Coffee"
         }
     }
 }
