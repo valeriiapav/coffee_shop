@@ -13,20 +13,43 @@ struct HomeView: View {
     var body: some View {
         ScrollView {
             header
-            Image("Banner")
             coffeeTypeSelector
             coffeeTable
         }
-        .background(.csBackground)
+        .background(
+            background
+        )
     }
     
     var header: some View {
-        VStack {
-            Text("Location")
-            Text("Lviv, Ukraine")
+        HStack {
+            VStack(alignment: .leading, spacing: 10) {
+                Text("Location")
+                    .foregroundStyle(.csGray)
+                    .font(Constants.fontSora(14))
+                HStack {
+                    Text("Lviv, Ukraine")
+                        .foregroundStyle(.white)
+                        .font(Constants.fontSora(16))
+                        .fontWeight(.semibold)
+                        
+                    Image(systemName: "chevron.down")
+                        .font(.system(size: 14))
+                        .foregroundStyle(.white)
+                }
+                .padding(.bottom, 70)
+            }
+            Spacer()
         }
-        .frame(minWidth:Constants.screenWidth)
+        .frame(maxWidth: .infinity)
+        .padding()
         .background(.csBlack)
+        .overlay(
+            Image("Banner")
+                .padding(.bottom, -70),
+            alignment: .bottom
+        )
+        .padding(.bottom, 70)
     }
     
     var coffeeTypeSelector: some View {
@@ -35,7 +58,6 @@ struct HomeView: View {
                 ForEach(CoffeeType.allCases, id: \.self) { type in
                     coffeeTypeTab(type: type)
                 }
-                
             }
         }
         .scrollIndicators(.hidden)
@@ -61,6 +83,20 @@ struct HomeView: View {
             .onTapGesture {
                 viewModel.selectedCoffeeType = type
             }
+    }
+    
+    var background: some View {
+        ZStack {
+            Rectangle()
+                .foregroundStyle(.csBackground)
+            VStack {
+                Rectangle()
+                    .foregroundStyle(.csBlack)
+                    .frame(height: Constants.screenHeight / 10)
+                Spacer()
+            }
+        }
+        .ignoresSafeArea()
     }
 }
 
