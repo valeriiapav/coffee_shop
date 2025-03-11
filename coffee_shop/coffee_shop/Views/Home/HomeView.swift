@@ -12,9 +12,21 @@ struct HomeView: View {
     
     var body: some View {
         ScrollView {
+            header
+            Image("Banner")
             coffeeTypeSelector
             coffeeTable
         }
+        .background(.csBackground)
+    }
+    
+    var header: some View {
+        VStack {
+            Text("Location")
+            Text("Lviv, Ukraine")
+        }
+        .frame(minWidth:Constants.screenWidth)
+        .background(.csBlack)
     }
     
     var coffeeTypeSelector: some View {
