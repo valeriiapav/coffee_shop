@@ -1,7 +1,6 @@
 [
     {
         "type": [
-            "all",
             "matcha",
             "milk_coffee"
         ],
@@ -14,7 +13,6 @@
     },
     {
         "type": [
-            "all",
             "plain_coffee"
         ],
         "name": "Americano",
@@ -26,7 +24,6 @@
     },
     {
         "type": [
-            "all",
             "milk_coffee"
         ],
         "name": "Cappucino",
@@ -38,7 +35,6 @@
     },
     {
         "type": [
-            "all",
             "plain_coffee"
         ],
         "name": "Dopio",
@@ -50,7 +46,6 @@
     },
     {
         "type": [
-            "all",
             "milk_coffee"
         ],
         "name": "Frappe",
@@ -62,7 +57,6 @@
     },
     {
         "type": [
-            "all",
             "milk_coffee"
         ],
         "name": "Latte",

@@ -66,7 +66,12 @@ struct HomeView: View {
     
     var coffeeTable: some View {
         LazyVGrid(columns: [ GridItem(.adaptive(minimum: Constants.screenWidth / 2.2)) ], spacing: 15) {
-            ForEach(viewModel.coffeeDrinks.filter {$0.type.contains(viewModel.selectedCoffeeType)}, id: \.self) { item in
+            ForEach(viewModel.coffeeDrinks.filter { drink in
+                if let selectedType = viewModel.selectedCoffeeType {
+                    return drink.type.contains(selectedType)
+                }
+                return true
+            }, id: \.self) { item in
                 CoffeePreviewCard(coffee: item)
             }
         }
