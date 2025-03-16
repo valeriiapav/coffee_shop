@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject var viewModel: HomeViewModel = .init()
+    @State var viewModel: HomeViewModel = .init()
+    @FocusState var searchFocused: Bool
     
     var body: some View {
         ScrollView {
@@ -19,6 +20,9 @@ struct HomeView: View {
         .background(
             background
         )
+        .onTapGesture {
+            searchFocused = false
+        }
     }
     
     var header: some View {
@@ -37,8 +41,10 @@ struct HomeView: View {
                         .font(.system(size: 14))
                         .foregroundStyle(.white)
                 }
-                .padding(.bottom, 70)
+        
+                SearchBar(input: $viewModel.searchPrompt, isFocused: $searchFocused)
             }
+            .padding(.bottom, 70)
             Spacer()
         }
         .frame(maxWidth: .infinity)
@@ -55,8 +61,16 @@ struct HomeView: View {
     var coffeeTypeSelector: some View {
         ScrollView(.horizontal) {
             LazyHStack {
+                coffeeTypeTab(name: "All Coffee")
+                    .onTapGesture {
+                        viewModel.selectedCoffeeType = nil
+                    }
+                
                 ForEach(CoffeeType.allCases, id: \.self) { type in
-                    coffeeTypeTab(type: type)
+                    coffeeTypeTab(name: type.stringRepresentation)
+                        .onTapGesture {
+                            viewModel.selectedCoffeeType = type
+                        }
                 }
             }
         }
@@ -77,17 +91,14 @@ struct HomeView: View {
         }
     }
     
-    func coffeeTypeTab(type: CoffeeType) -> some View {
-        Text(type.stringRepresentation)
+    func coffeeTypeTab(name: String) -> some View {
+        Text(name)
             .foregroundStyle(.csChocolate)
             .padding()
             .background(
                 RoundedRectangle(cornerRadius: 16)
                     .foregroundStyle(.csBeige)
             )
-            .onTapGesture {
-                viewModel.selectedCoffeeType = type
-            }
     }
     
     var background: some View {
@@ -97,7 +108,7 @@ struct HomeView: View {
             VStack {
                 Rectangle()
                     .foregroundStyle(.csBlack)
-                    .frame(height: Constants.screenHeight / 10)
+                    .frame(height: Constants.screenHeight / 5)
                 Spacer()
             }
         }

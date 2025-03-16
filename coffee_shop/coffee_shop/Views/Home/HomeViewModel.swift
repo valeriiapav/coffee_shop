@@ -7,9 +7,11 @@
 
 import Foundation
 
-final class HomeViewModel: ObservableObject {
+@Observable class HomeViewModel {
     let coffeeDrinks: [CoffeeDrink]
-    @Published var selectedCoffeeType: CoffeeType? = nil
+    
+    var selectedCoffeeType: CoffeeType? = nil
+    var searchPrompt: String = ""
     
     init() {
         coffeeDrinks = DrinksDataManager.shared.drinks

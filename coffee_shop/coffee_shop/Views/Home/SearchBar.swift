@@ -8,15 +8,42 @@
 import SwiftUI
 
 struct SearchBar: View {
-    @Binding var prompt: String
+    @Binding var input: String
+    @FocusState.Binding var isFocused: Bool
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TextField("", text: $input)
+            .focused($isFocused)
+            .frame(width: .infinity)
+            .padding()
+            .background(
+                RoundedRectangle(cornerRadius: 12)
+                    .foregroundStyle(.csSearchBar)
+            )
+            .overlay(
+                Group {
+                    if !isFocused && input.isEmpty {
+                        HStack(spacing: 15) {
+                            Image("search")
+                                .foregroundStyle(.white)
+                            Text("Search coffee")
+                                .foregroundStyle(.csGray)
+                                .font(Constants.fontSora(14))
+                            Spacer()
+                        }
+                        .padding(.horizontal, 25)
+                    }
+                }
+            )
+            .onTapGesture {
+                isFocused = true
+            }
     }
 }
 
 #Preview {
-    @Previewable @State var prompt: String = ""
+    @Previewable @State var input: String = ""
+    @FocusState var focused: Bool
     
     ZStack {
         Rectangle()
@@ -24,7 +51,9 @@ struct SearchBar: View {
             .ignoresSafeArea()
         
         SearchBar(
-            prompt: $prompt
+            input: $input,
+            isFocused: $focused
         )
+        .padding(.horizontal, 25)
     }
 }
