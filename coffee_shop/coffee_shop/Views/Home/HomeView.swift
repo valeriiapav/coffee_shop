@@ -16,6 +16,7 @@ struct HomeView: View {
             header
             coffeeTypeSelector
             coffeeTable
+                .padding(.bottom, Constants.screenHeight / 10)
         }
         .background(
             background

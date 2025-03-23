@@ -65,5 +65,40 @@
         "price": 3.5,
         "addition": "dish contains allergen",
         "rating": 4.9
+    },
+    {
+        "type": [
+            "milk_coffee"
+        ],
+        "name": "Moccacino",
+        "asset": "moccacino",
+        "description": "Includes lactose-free or plant-based milk option",
+        "price": 3.9,
+        "addition": "dish contains allergen",
+        "rating": 4.8
+    },
+    {
+        "type": [
+            "milk_coffee",
+            "special"
+        ],
+        "name": "Nut latte",
+        "asset": "nut_latte",
+        "description": "Includes lactose-free or plant-based milk option",
+        "price": 3.5,
+        "addition": "dish contains allergen",
+        "rating": 4.9
+    },
+    {
+        "type": [
+            "milk_coffee",
+            "special"
+        ],
+        "name": "Gingerbread coffee",
+        "asset": "gingerbread_coffee",
+        "description": "Includes lactose-free or plant-based milk option",
+        "price": 3.5,
+        "addition": "dish contains allergen",
+        "rating": 4.9
     }
 ]

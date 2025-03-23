@@ -11,7 +11,15 @@ import Foundation
     let coffeeDrinks: [CoffeeDrink]
     
     var selectedCoffeeType: CoffeeType? = nil
-    var searchPrompt: String = ""
+    var searchPrompt: String = "" {
+        didSet {
+            
+        }
+        
+        willSet {
+            
+        }
+    }
     
     init() {
         coffeeDrinks = DrinksDataManager.shared.drinks
